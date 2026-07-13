@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/enable_header" />
+
+        <Switch
+            android:thumb="@drawable/switch_thumb"
+            android:track="@drawable/switch_track"
+            android:id="@+id/settings_enabled_on_power_saver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?android:attr/listPreferredItemHeight"
+            android:text="@string/smart_pixels_on_power_save_title"
+            android:textAppearance="?android:attr/textAppearanceListItem"
+            android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+            android:paddingEnd="?android:attr/listPreferredItemPaddingEnd" />
+
+        <Switch
+            android:thumb="@drawable/switch_thumb"
+            android:track="@drawable/switch_track"
+            android:id="@+id/settings_enabled_system_bars_shifting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?android:attr/listPreferredItemHeight"
+            android:text="@string/smart_pixels_system_bars_shifting_title"
+            android:textAppearance="?android:attr/textAppearanceListItem"
+            android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+            android:paddingEnd="?android:attr/listPreferredItemPaddingEnd" />
+
+        <Switch
+            android:thumb="@drawable/switch_thumb"
+            android:track="@drawable/switch_track"
+            android:id="@+id/settings_enabled_set_dim_on_sb_drag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?android:attr/listPreferredItemHeight"
+            android:text="@string/smart_pixels_set_dim_on_sb_drag"
+            android:textAppearance="?android:attr/textAppearanceListItem"
+            android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+            android:paddingEnd="?android:attr/listPreferredItemPaddingEnd" />
+
+        <include
+            android:id="@+id/settings_dim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/seekbar_title" />
+
+        <include
+            android:id="@+id/settings_bars_alpha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/seekbar_title" />
+
+        <include
+            android:id="@+id/settings_pattern"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/seekbar_title" />
+
+        <include
+            android:id="@+id/settings_shift_timeout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/seekbar_title" />
+
+    </LinearLayout>
+
+</ScrollView>

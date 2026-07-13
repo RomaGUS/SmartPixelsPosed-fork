@@ -1,0 +1,45 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace 'com.fk.smartpixelsposed'
+    compileSdk = 36
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    defaultConfig {
+        applicationId = namespace
+        minSdk = 24
+        targetSdk = compileSdk
+        versionCode = 14
+        versionName = "1.14"
+        multiDexEnabled = false
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+dependencies {
+    //noinspection GradleDependency
+    compileOnly libs.xposedapi
+    compileOnly project(':hidden')
+}
+
+android.applicationVariants.all {
+    outputs.all {
+        outputFileName = "${rootProject.name.replace(" ", "_")}-v${versionName}-${buildType.name}.apk"
+    }
+}
